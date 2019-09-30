@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function-build-in</title>
+</head>
+<body>
+<fieldset>
+    <legend>Function join</legend>
+    <button onclick="functionBuildIn()">function join</button>
+    <pre id="oldArray">Old array : </pre>
+    <pre id="resultArray">New array : </pre>
+    <script>
+        function functionBuildIn() {
+            let arr = ["White", "Red", "Black", "Green"];
+            document.getElementById("oldArray").innerText += arr;
+            let newArray = arr.join(" , ");
+            document.getElementById("resultArray").innerHTML += newArray;
+        }
+    </script>
+</fieldset>
+
+<fieldset>
+    <legend>Add dashes betwen value</legend>
+    <input id="enterNumber" type="number" value="">
+    <button onclick="addDashes()">add dash</button>
+    <pre id="result"></pre>
+    <script>
+        function addDashes() {
+            let arr = document.getElementById("enterNumber").value;
+            let newArr = arr.toString();
+            let temparr = new Array();
+            let sout = "";
+            for (let i = 0; i < newArr.length; i++) {
+                if ((newArr[i] % 2 === 0) && (newArr[i + 1] % 2 === 0)) {
+                    temparr.push(newArr[i] + "-");
+                } else {
+                    temparr.push(newArr[i]);
+                }
+            }
+            for (let i = 0; i < temparr.length; i++) {
+                sout += temparr[i];
+            }
+            document.getElementById("result").innerText = sout;
+        }
+    </script>
+</fieldset>
+
+<fieldset>
+    <legend>Change word</legend>
+    <input type="text" id="enterWord" value="">
+    <button onclick="changeWord()">change word</button>
+    <pre id="resultNewString"></pre>
+    <script>
+        function changeWord() {
+            let array = document.getElementById("enterWord").value;
+            let upperCase = "QWERTYUIOPASDFGHJKLZXCVBNM";
+            upperCase = upperCase.split("");
+
+            let lowerCase = "qwertyuiopasdfghjklzxcvbnm";
+            lowerCase = lowerCase.split("");
+            array = array.split("");
+            let text = "";
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == " ") {
+                    text += " ";
+                } else {
+                    for (let j = 0; j < upperCase.length; j++) {
+                        if (array[i] == upperCase[j]) {
+                            text += lowerCase[j];
+                            break;
+                        } else if (array[i] == lowerCase[j]) {
+                            text += upperCase[j];
+                            break;
+                        }
+                    }
+                }
+            }
+            console.log(text);
+
+        }
+    </script>
+</fieldset>
+</body>
+</html>
