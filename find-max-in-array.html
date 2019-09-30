@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>find-value-max-in-array</title>
+</head>
+<body>
+<button onclick="findValueMaxArray()">find max</button>
+<pre id="resultValueMax"></pre>
+<script>
+    let arr = [1, -4, 7, 2, 4, 9, 8];
+
+    function findValueMaxArray() {
+        let number = 0;
+        let max = arr[0];
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                number = i;
+            }
+        }
+        document.getElementById("resultValueMax").innerText = "max: " + max + " at position " + number;
+    }
+</script>
+</body>
+</html>
