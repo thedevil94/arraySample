@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reserve-array</title>
+</head>
+<body>
+<fieldset>
+    <legend>Reserve array</legend>
+    <table>
+        <tr>
+            <td>
+                <pre id="screenValue">Array old :</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre id="result">Array new :</pre>
+            </td>
+        </tr>
+    </table>
+    <button onclick="reserveArray()">reserve array</button>
+</fieldset>
+<script>
+    let arr = [1, 4, -7, 8, -7, 2];
+    document.getElementById("screenValue").innerText += arr;
+
+    function reserveArray() {
+        let first = 0;
+        let last = arr.length - 1;
+        while (first < last) {
+            let change = arr[first];
+            arr[first] = arr[last];
+            arr[last] = change;
+            first++;
+            last--;
+        }
+        document.getElementById("result").innerText += arr;
+    }
+</script>
+</body>
+</html>
