@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>find-value-in-array</title>
+</head>
+<body>
+<input id="valu" type="text">
+<button onclick="findValue()">Find value</button>
+<div id="result"></div>
+<script>
+    let arr = [1, 5, 4, 9, 5, 3];
+
+    function findValue() {
+        let valu = document.getElementById("valu").value;
+        let flag = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (parseInt(valu) == arr[i]) {
+                document.getElementById("result").innerText = "congratulations";
+                flag = true;
+                break;
+            }
+        }
+        if (flag == false) {
+            document.getElementById("result").innerText = "You Lost";
+        }
+
+
+    }
+</script>
+</body>
+</html>

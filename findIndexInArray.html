@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>find-index-in-array</title>
+</head>
+<body>
+<!--    <script>-->
+<!--        let number = parseInt(prompt("Enter the number : "))-->
+<!--        let arr=[5,7,1,9,15];-->
+<!--        for (let i = 0 ; i <= arr.length ; i++){-->
+<!--            if (number === arr[i]){-->
+<!--                alert("Hey " + arr[i] + " I found you ");-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+
+<input id="inputNumber" type="number" value="">
+<button onclick="findNumber()">Find</button>
+<div id="result"></div>
+<script>
+    let a = [1, 8, 7, 6, 4, 9];
+
+    function findNumber() {
+        document.getElementById("inputNumber").focus();
+        let num = parseInt(document.getElementById("inputNumber").value);
+        let flag = false;
+        for (let i = 0; i < a.length; i++) {
+            if (num == a[i]) {
+                flag = true;
+                document.getElementById("result").innerHTML = a[i] + " I Found You";
+                break;
+            }
+        }
+        if (flag == false) {
+            alert("Hide on bush");
+        }
+    }
+
+</script>
+</body>
+</html>
