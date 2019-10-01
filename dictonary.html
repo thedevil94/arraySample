@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dictionary</title>
+</head>
+<body>
+<fieldset>
+    <form>
+        <p>English : <input type="text" id="english"></p>
+        <pre id="vietnamese">Tiếng việt : </pre>
+    </form>
+    <button onclick="translate1()">translate</button>
+</fieldset>
+<script>
+    function translate1() {
+        let english = ["green", "blue", "white", "black"];
+        let vietnamese = ["xanh lá cây", "xanh da trời", "màu trắng", "màu đen"];
+        let eng = document.getElementById("english").value;
+
+        for (let i = 0; i < eng.length; i++) {
+            if (eng === english[i]) {
+                document.getElementById("vietnamese").innerHTML += vietnamese[i];
+                return;
+            }
+        }
+        document.getElementById("vietnamese").innerHTML = "no word in dictionary";
+    }
+</script>
+</body>
+</html>
